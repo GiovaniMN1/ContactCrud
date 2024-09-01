@@ -1,0 +1,48 @@
+﻿@model ContactCrud.Models.Contact
+@{
+    ViewData["Title"] = "Borrar Contacto.";
+}
+
+<h1 class="text-center">Contactos con  net 8</h1>
+
+<div class="row">
+    <div class="offset-12">
+        <div class="card-border">
+            <div class="card-header bg-dark">
+                <h3 class="text-white"><strong>Borrar Usuario</strong></h3>
+            </div>
+            <div class="card-body">
+                @* ID del usuario como campo oculto *@
+                <input type="hidden" asp-for="Id" />
+                @* Creamos un formulario *@
+                <form asp-action="Borrar">
+                    <div asp-validation-summary="ModelOnly" class="text-danger">
+                    </div>
+                    <div class="form-group"> 
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" readonly></input>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PhoneNumber" class="control-label"></label>
+                        <input asp-for="PhoneNumber" class="form-control" readonly></input>
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" readonly></input>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-primary d-block mx-auto">
+                            Borrar Usuario
+                        </button>
+                    </div>
+                </form>
+                <a asp-controller="Inicio" asp-action="Index">Volver</a>
+
+            </div>
+        </div>
+    </div>
+</div>
